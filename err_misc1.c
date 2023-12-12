@@ -136,7 +136,7 @@ char *convert_number(long int num, int base, int flags)
  * @buf: str address.
  * Return : nothing.
  */
-d
+
 void remove_comments(char *buf)
 
 {
