@@ -13,9 +13,10 @@ struct stat st;
 
 (void)info;
 if (!path || stat(path, &st) != 0)
-return 0;
 
+return (0);
 if (S_ISREG(st.st_mode) && (st.st_mode & S_IXUSR))
+
 return 1;
 
 return (0);
@@ -37,10 +38,11 @@ int i, k = 0;
 for (k = 0, i = start; i < stop; i++)
 {
 if (pathstr[i] != ':')
+
 buf[k++] = pathstr[i];
 }
 buf[k] = 0;  
-return buf;
+return (buf);
 } 
 
 /**
@@ -68,6 +70,7 @@ return cmd;
 while (1) 
 {
 if (!pathstr[i] || pathstr[i] == ':')
+
 {
 path = dup_chars(pathstr, curr_pos, i);
 
@@ -83,11 +86,12 @@ if (is_cmd(info, path))
 return path; 
 
 if (!pathstr[i])
+
 break;  
 
 curr_pos = i;
 } 
 i++;
 }  
-return NULL;
+return (NULL);
 }

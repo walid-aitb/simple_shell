@@ -16,6 +16,7 @@ size_t len_p = 0;
 if (!*len) /* Fill if empty */
 {
 free(*buf); /* Release if exists */
+
 *buf = NULL;  
 signal(SIGINT, sigintHandler);
 
@@ -61,7 +62,8 @@ _putchar(BUF_FLUSH);
 r = input_buf(info, &buf, &len);
 
 if (r == -1) 
-return -1;
+
+return (-1);
 
 if (len) 
 {
@@ -84,6 +86,7 @@ info->cmd_buf_type = CMD_NORM;
 }
 
 *buf_p = p;
+
 return _strlen(p); /* Return length */
 } 
 
@@ -104,7 +107,8 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 ssize_t r = 0;
 
 if (*i)
-return 0;
+
+return (0);
 
 r = read(info->readfd, buf, READ_BUF_SIZE);
 if (r >= 0)
@@ -139,7 +143,7 @@ i = len = 0;
 r = read_buf(info, buf, &len);
 
 if (r == -1 || (r == 0 && len == 0))
-return -1;
+return (-1);
 
 c = _strchr(buf + i, '\n');
 k = c ? 1 + (unsigned int)(c - buf) : len;
@@ -149,6 +153,7 @@ if (!new_p) /* Failed memory allocation */
 return p ? free(p), -1 : -1;
 
 if (s)
+
 _strncat(new_p, buf + i, k - i);
 else
 _strncpy(new_p, buf + i, k - i + 1);
@@ -174,5 +179,6 @@ void sigintHandler(__attribute__((unused)) int sig_num)
 {
 _puts("\n");
 _puts("$ "); 
+
 _putchar(BUF_FLUSH);
 } 
