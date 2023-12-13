@@ -15,11 +15,13 @@ char *s = dest;
 
 i = 0;
 while (src[i] != '\0' && i < n - 1)
+
 {
 dest[i] = src[i];
 i++;
 } 
 if (i < n)
+
 {  
 j = i;           
 while (j < n)
@@ -49,6 +51,7 @@ char *s = dest;
 i = 0;
 j = 0;
 while (dest[i] != '\0')
+
 i++;
 while (src[j] != '\0' && j < n)
 {
@@ -58,7 +61,7 @@ j++;
 } 
 if (j < n)
 dest[i] = '\0';
-return s; 
+return (s); 
 
 }
 
@@ -73,9 +76,9 @@ char *_strchr(char *s, char c)
 {
 do {
 if (*s == c)
-return s; 
+return (s); 
 } 
 while (*s++ != '\0'); 
 
-return NULL; 
+return (NULL); 
 }

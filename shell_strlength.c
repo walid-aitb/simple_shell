@@ -12,11 +12,12 @@ int _strlen(char *s)
 int i = 0;
 
 if (!s)
+
 return (0);
 
 while (*s++)
 i++;  
-return i; 
+return (i); 
 }
 
 /**
@@ -29,6 +30,7 @@ return i;
 int _strcmp(char *s1, char *s2)
 {
 while (*s1 && *s2) 
+
 {
 if (*s1 != *s2) 
 return (*s1 - *s2); 
@@ -53,7 +55,7 @@ char *starts_with(const char *haystack, const char *needle)
 while (*needle) 
 {
 if (*needle++ != *haystack++)  
-return NULL; 
+return (NULL); 
 }
 return (char *)haystack;
 }
@@ -73,6 +75,7 @@ char *ret = dest;
 while (*dest) 
 dest++;
 while (*src)
+
 *dest++ = *src++;   
 *dest = *src; 
 return ret; 

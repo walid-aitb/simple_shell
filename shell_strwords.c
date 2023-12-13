@@ -13,7 +13,7 @@ int i, j, k, m, numwords = 0;
 char **s;
 
 if (str == NULL || str[0] == '\0')
-return NULL;
+return (NULL);
 if (!d)                
 d = " ";  
 
@@ -28,11 +28,12 @@ return NULL;
 
 s = malloc((1 + numwords) * sizeof(char *));
 if (!s)
-return NULL;
+return (NULL);
 
 for (i = 0, j = 0; j < numwords; j++)
 {
 while (is_delim(str[i], d)) 
+
 i++; 
 k = 0;
  
@@ -45,7 +46,7 @@ if (!s[j])
 for (k = 0; k < j; k++)
 free(s[k]);
 free(s);
-return NULL;
+return (NULL);
 }
 
 for (m = 0; m < k; m++)
@@ -53,7 +54,7 @@ s[j][m] = str[i++];
 s[j][m] = '\0';
 }
 
-s[j] = NULL;
+s[j] = (NULL);
 return (s);
 }  
 
@@ -70,7 +71,7 @@ int i, j, k, m, numwords = 0;
 char **s;
 
 if (str == NULL || str[0] == '\0')
-return NULL;
+return (NULL);
 
 for (i = 0; str[i] != '\0'; i++)
 {
@@ -80,11 +81,12 @@ numwords++;
 }
 
 if (numwords == 0)
-return NULL;
+
+return (NULL);
 
 s = malloc((1 + numwords) * sizeof(char *));
 if (!s)
-return NULL;    
+return (NULL);    
 
 for (i = 0, j = 0; j < numwords; j++)
 {
@@ -108,9 +110,10 @@ return NULL;
 
 for (m = 0; m < k; m++)
 s[j][m] = str[i++];
-s[j][m] = '\0';       
+s[j][m] = '\0';
+       
 }  
 
 s[j] = NULL;
-return s;            
+return (s);            
 } 

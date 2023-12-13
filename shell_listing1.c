@@ -11,6 +11,7 @@ size_t list_len(const list_t *h)
 size_t i = 0;
 
 while (h)
+
 {
 h = h->next; 
 i++;  
@@ -34,11 +35,12 @@ char *str;
 size_t j;
 
 if (!head || !i)
-return NULL;
+
+return (NULL);
 
 strs = malloc(sizeof(char *) * (i + 1));
 if (!strs)
-return NULL;
+return (NULL);
 for (i = 0; node; node = node->next, i++)
 {
 str = malloc(_strlen(node->str) + 1);
@@ -50,9 +52,9 @@ free(strs);
 return NULL;
 		}
 str = _strcpy(str, node->str);
-strs[i] = str; 
+ strs[i] = str; 
 }
-strs[i] = NULL;
+strs[i] = (NULL);
 return strs;
 }
 
@@ -70,6 +72,7 @@ while (h)
 {
 _puts(convert_number(h->num, 10, 0));
 _puts(": "); 
+
 _puts(h->str ? h->str : "(nil)");
 _puts("\n");
 h = h->next;
@@ -94,8 +97,9 @@ while (node)
 {
 p = starts_with(node->str, prefix);
 if (p && ((c == -1) || (*p == c)))  
-return node; 
+return (node); 
 node = node->next; 
+
 }
 return NULL;
 }
@@ -114,7 +118,7 @@ size_t i = 0;
 while (head)
 {
 if (head == node)
-return i;
+return (i);
 head = head->next;  
 i++; 
 }

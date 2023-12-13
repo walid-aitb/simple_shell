@@ -9,10 +9,11 @@
 int bfree(void **ptr) 
 {
 if (ptr && *ptr)
+
 {
 free(*ptr);   /* Release memory */
 *ptr = NULL;  /* Set pointer to NULL */
-return 1;     /* Return 1 to indicate success */
+return (1);     /* Return 1 to indicate success */
 }
-return 0; 
+return (0); 
 }
